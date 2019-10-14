@@ -22,14 +22,14 @@ $(document).ready(function () {
             c: 'Halloween House' 
         },
         2: {
-            q: 'q3',
-            a: ['a1', 'a2', 'a3'],
-            c: 'a4' 
+            q: 'In New England, what is the night before Halloween refered to as?',
+            a: ['Hallows-Eve', 'Black Thursday', 'Pumpkin Moon'],
+            c: 'Cabbage Night' 
         },
         3: {
-            q: 'q4',
-            a: ['a1', 'a2', 'a3'],
-            c: 'a4' 
+            q: 'What was the original celtic pronunciation of the day Halloween hails from?',
+            a: ['Sam + Hain', 'Hal + W`hein', 'Hoal`o + Eyne'],
+            c: 'Saw + When' 
         },
         4: {
             q: 'q5',
