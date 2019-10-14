@@ -1,62 +1,58 @@
 $(document).ready(function () {
-    // Global Variables
+    var userChoice;
+    var listWord = [];;
     var round = 0;
     var wins = 0;
     var loses = 0;
-    var selQ; //selected question
     var countdownRunning;
+    var betweenRounds = true;
+    var optionsLayout = false;
     var intervalId;
+    var tempDiv = $("<div>");
     var time;
-    var prevQ = {}; //empty obvect for previous rounds
     var questions = {
         0: {
-            q: 'q1', //question being asked
-            a: ['0a1', '0a2', '0a3'], //options
-            c: '0a4' //correct answer
+            q: 'q2',
+            a: ['1a1', '1a2', '1a3'],
+            c: '1a4' 
         },
         1: {
-            q: 'q2', //question being asked
-            a: ['1a1', '1a2', '1a3'], //options
-            c: '1a4' //correct answer
+            q: 'q2',
+            a: ['a1', 'a2', 'a3'],
+            c: 'a4' 
         },
         2: {
-            q: 'q2', //question being asked
-            a: ['a1', 'a2', 'a3'], //options
-            c: 'a4' //correct answer
+            q: 'q3',
+            a: ['a1', 'a2', 'a3'],
+            c: 'a4' 
         },
         3: {
-            q: 'q3', //question being asked
-            a: ['a1', 'a2', 'a3'], //options
-            c: 'a4' //correct answer
+            q: 'q4',
+            a: ['a1', 'a2', 'a3'],
+            c: 'a4' 
         },
         4: {
-            q: 'q4', //question being asked
-            a: ['a1', 'a2', 'a3'], //options
-            c: 'a4' //correct answer
+            q: 'q5',
+            a: ['a1', 'a2', 'a3'],
+            c: 'a4' 
         },
         5: {
-            q: 'q5', //question being asked
-            a: ['a1', 'a2', 'a3'], //options
-            c: 'a4' //correct answer
-        },
-        6: {
-            q: 'q6', //question being asked
-            a: ['a1', 'a2', 'a3'], //options
-            c: 'a4' //correct answer
+            q: 'q6',
+            a: ['a1', 'a2', 'a3'],
+            c: 'a4' 
         },
     };
 
+    display();
     shuffle(questions);
-    // make array/object of questions
-    //shuffle?
-    // create answers? ======= & images?
-    //shuffle?
 
     function timer() {
-        if (time > 0){
+        if (time > 0 && countdownRunning) {
             display();
             time--;
             intervalId = setTimeout(timer, 1000);
+        } else {
+            loses++;
         }
     }
 
@@ -71,74 +67,78 @@ $(document).ready(function () {
     function newRound() {
         clearInterval(intervalId);
         setTimeout(endRound, 30000);
-        console.log("newRound()");
-        do{
-            time = 30;
-            countdownRunning = true;
+        betweenRounds = false;
+        time = 30;
+        countdownRunning = true;
+        do {
             timer();
-            // compare();
-            // display();
-            console.log(round);
-        }while(round < questions.length)
-        
+            gamePlay();
+        } while (round < questions.length)
     }
 
-    function endRound(){
-        clearInterval(intervalId);
-        if (round > 0){
-            $("#timer").html("<p> Round Over <br> Click Anywhere For Next Question </p>");
-        }
+    function endRound() {
+        round++;
+        betweenRounds = true;
         countdownRunning = false;
+        clearInterval(intervalId);
+        if (round > 0) {
+            $("#timer").html("<p> Round Over <br> Click Start Again For Next Question </p>");
+        }
+        $(tempDiv).remove();
+    }
+
+    function gamePlay() {
+        for (i = 0; i < questions[round].a.length; i++) {
+            listWord[i] = $(`<li>`);
+            $(listWord[i]).html(questions[round].a[i]);
+            $(listWord[i]).attr('id', questions[round].a[i]);
+        }
+        listWord[3] = $(`<li>`);
+        $(listWord[3]).html(questions[round].c);
+        $(listWord[3]).attr('id', questions[round].c);
+        display();
+        optionsLayout = false;
     }
 
     function compare() {
-
+        if (userChoice == questions[round].c) {
+            wins++;
+        } else {
+            loses++;
+        }
+        display();
     }
 
     function display() {
-        if (countdownRunning) {
-            console.log(time);
-            $("#timer").text(time);
+        if (!betweenRounds) {
+            $("#timer").html(time);
         }
-        
-        
-
+        if (optionsLayout) {
+            $("#question").html(questions[round].q);
+            shuffle(listWord);
+            $(tempDiv).empty();
+            for (i = 0; i < listWord.length; i++) {
+                $(tempDiv).append(listWord[i]);
+            }
+            $("#answers").append(tempDiv);
+        }
+        $("#wins").html("Wins: " + wins);
+        $("#loses").html("Losses: " + loses);
+        $("#round").html("Round: " + (1 + round));
     }
 
-    // select question to display
-    // determine correct vs incorrect
-    // display question options
-
-    // incriment/decrease time
-
-    // if time runs out display correct answer and move on to newRound
-    //loses++
-
-    // onClick compare answer to correct vs incorrect
-    //losses or wins ++
-
-    //display image?
-    //round++
-    //reset timer
-
-    // next question
-
-    $("#start").on('click', function(){
-        countdownRunning = false;
-        newRound();
-        round++;
-    });
-
-    $("#answers").on('click', function(){
-        console.log("answer / end round");
-        endRound();
-    });
-
-    $(document).on('click', function(){
-        if (!countdownRunning){
+    $("#start").on('click', function () {
+        if (betweenRounds) {
+            optionsLayout = true;
             newRound();
         }
     });
 
-
+    $("#answers").on('click', function () {
+        if (!betweenRounds) {
+            userChoice = event.target.id;
+            compare();
+            endRound();
+        }
+    });
 });
