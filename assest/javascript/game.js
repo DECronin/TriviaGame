@@ -46,8 +46,6 @@ $(document).ready(function () {
     display();
     var propOwn = Object.getOwnPropertyNames(questions);//creates simple array of obkects first children
     shuffle(questions, propOwn.length);
-    console.log(propOwn);
-    console.log(questions);
 
     function timer() {
         if (time > 0 && countdownRunning) {
