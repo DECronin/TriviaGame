@@ -28,18 +28,18 @@ $(document).ready(function () {
         },
         3: {
             q: 'What was the original celtic pronunciation of the day Halloween hails from?',
-            a: ['Sam + Hain', 'Hal + W`hein', 'Hoal`o + Eyne'],
+            a: ['Sam + Hain', 'Hal + W`hein', 'Hoal`oh + Eyne'],
             c: 'Saw + When' 
         },
         4: {
-            q: 'q5',
-            a: ['a1', 'a2', 'a3'],
-            c: 'a4' 
+            q: 'Which famous magician died on October 31?',
+            a: ['David Copperfield', 'Madame DeLinsky', 'Ralf Bialla'],
+            c: 'Harry Houdini' 
         },
         5: {
-            q: 'q6',
-            a: ['a1', 'a2', 'a3'],
-            c: 'a4' 
+            q: 'Who was the Irish myth inspired by that today we carve Jack`O`Lanterns?',
+            a: ['Jack The Ripper', 'Unseelie Jack', 'Jack of the Hunt'],
+            c: 'Stingy Jack' 
         },
     };
 
