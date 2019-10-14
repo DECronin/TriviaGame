@@ -44,7 +44,10 @@ $(document).ready(function () {
     };
 
     display();
-    shuffle(questions);
+    var propOwn = Object.getOwnPropertyNames(questions);//creates simple array of obkects first children
+    shuffle(questions, propOwn.length);
+    console.log(propOwn);
+    console.log(questions);
 
     function timer() {
         if (time > 0 && countdownRunning) {
@@ -56,12 +59,11 @@ $(document).ready(function () {
         }
     }
 
-    function shuffle(a) {
-        for (let i = a.length - 1; i > 0; i--) {
+    function shuffle(a, i) {
+        for (i > 0; i--;) {
             const j = Math.floor(Math.random() * (i + 1));
             [a[i], a[j]] = [a[j], a[i]];
         }
-        return a;
     }
 
     function newRound() {
@@ -115,7 +117,7 @@ $(document).ready(function () {
         }
         if (optionsLayout) {
             $("#question").html(questions[round].q);
-            shuffle(listWord);
+            shuffle(listWord, listWord.length);
             $(tempDiv).empty();
             for (i = 0; i < listWord.length; i++) {
                 $(tempDiv).append(listWord[i]);
