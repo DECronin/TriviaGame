@@ -12,9 +12,9 @@ $(document).ready(function () {
     var time;
     var questions = {
         0: {
-            q: 'q2',
-            a: ['1a1', '1a2', '1a3'],
-            c: '1a4' 
+            q: 'What mythical creature with a rack and feathers is often described synonymously with the Wendigo?',
+            a: ['Chupacabra', 'Gryffin', 'Harpie'],
+            c: 'Ravenstag' 
         },
         1: {
             q: 'q2',
