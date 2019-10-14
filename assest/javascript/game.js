@@ -17,9 +17,9 @@ $(document).ready(function () {
             c: 'Ravenstag' 
         },
         1: {
-            q: 'q2',
-            a: ['a1', 'a2', 'a3'],
-            c: 'a4' 
+            q: 'What title did the Halloween Classic: Hocus Pocus almost go by?',
+            a: ['Skeleton Race', 'Witching Hour', 'Devils Three'],
+            c: 'Halloween House' 
         },
         2: {
             q: 'q3',
