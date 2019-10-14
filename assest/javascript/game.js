@@ -142,3 +142,6 @@ $(document).ready(function () {
         }
     });
 });
+
+// change between-screen to timed event instead of start/click
+// new game function instead of refreshing page
