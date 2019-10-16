@@ -8,6 +8,7 @@ $(document).ready(function () {
     var betweenRounds = true;
     var optionsLayout = false;
     var intervalId;
+    var correct;
     var tempDiv = $("<div>");
     var time;
     var questions = {
@@ -39,7 +40,7 @@ $(document).ready(function () {
         5: {
             q: 'Who was the Irish myth inspired by that today we carve Jack`O`Lanterns?',
             a: ['Jack The Ripper', 'Unseelie Jack', 'Jack of the Hunt'],
-            c: 'Stingy Jack' 
+            c: 'Stingy Jack'
         },
     };
 
@@ -101,7 +102,8 @@ $(document).ready(function () {
     }
 
     function compare() {
-        if (userChoice == questions[round].c) {
+        correct = questions[round].c;
+        if (userChoice == correct) {
             wins++;
         } else {
             loses++;
@@ -130,6 +132,8 @@ $(document).ready(function () {
     $("#start").on('click', function () {
         if (betweenRounds) {
             optionsLayout = true;
+            $("#image").empty();
+            $("#answers").empty();
             newRound();
         }
     });
@@ -139,6 +143,8 @@ $(document).ready(function () {
             userChoice = event.target.id;
             compare();
             endRound();
+            $("#image").src(questions[round].gif);
+            $("#answers").html(correct);
         }
     });
 });
