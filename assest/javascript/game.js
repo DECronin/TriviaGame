@@ -66,6 +66,12 @@ $(document).ready(function () {
     }
 
     function newRound() {
+            optionsLayout = true;
+            $("#image").empty();
+            $("#answers").empty();
+        optionsLayout = true;
+        $("#image").empty();
+        $("#answers").empty();
         clearInterval(intervalId);
         setTimeout(endRound, 30000);
         betweenRounds = false;
@@ -81,9 +87,10 @@ $(document).ready(function () {
         round++;
         betweenRounds = true;
         countdownRunning = false;
+        setTimeout(newRound, 15000);
         clearInterval(intervalId);
         if (round > 0) {
-            $("#timer").html("<p> Round Over <br> Click Start Again For Next Question </p>");
+            $("#timer").html("<p> Round Over <br> Next Question in 15 Seconds </p>");
         }
         $(tempDiv).remove();
     }
@@ -130,12 +137,8 @@ $(document).ready(function () {
     }
 
     $("#start").on('click', function () {
-        if (betweenRounds) {
-            optionsLayout = true;
-            $("#image").empty();
-            $("#answers").empty();
-            newRound();
-        }
+        $("#start").hide();
+        newRound();
     });
 
     $("#answers").on('click', function () {
@@ -143,7 +146,7 @@ $(document).ready(function () {
             userChoice = event.target.id;
             compare();
             endRound();
-            $("#image").src(questions[round].gif);
+            // $("#image").src(questions[round].gif);
             $("#answers").html(correct);
         }
     });
