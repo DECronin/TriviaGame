@@ -49,30 +49,30 @@ $(document).ready(function () {
             c: 'Stingy Jack',
             gif: "<img src='./assest/images/spoopy-pumpkin.gif'>"
         },
-        // 6:{
-        //     q: '',
-        //     a: [],
-        //     c: '',
-        //     gif: "<img src='./assest/images/_.gif'>"
-        // },
-        // 7:{
-        //     q: '',
-        //     a: [],
-        //     c: '',
-        //     gif: "<img src='./assest/images/_.gif'>"
-        // },
-        // 8:{
-        //     q: '',
-        //     a: [],
-        //     c: '',
-        //     gif: "<img src='./assest/images/_.gif'>"
-        // },
-        // 9: {
-        //     q: '',
-        //     a: [],
-        //     c: '',
-        //     gif: "<img src='./assest/images/_.gif'>"
-        // },
+        6:{
+            q: 'Which of the following is NOT a term for a scarecrow?',
+            a: ['Hodmedod', 'Bwbach', 'Tattie Bogal'],
+            c: 'Doodle Sack',
+            gif: "<img src='./assest/images/scarecrow.gif'>"
+        },
+        7:{
+            q: 'Where does the tradition of Bobbing For Apples originate?',
+            a: ['Egypt', 'Southern Asia', 'American West'],
+            c: 'Ancient Rome',
+            gif: "<img src='./assest/images/apple-bob.gif'>"
+        },
+        8:{
+            q: 'If you want to keep spirits out of your home on Halloween, what should you sprinkle on your doorstep?',
+            a: ['Sage', 'Cinnamon', 'Garlic'],
+            c: 'Salt',
+            gif: "<img src='./assest/images/salt.gif'>"
+        },
+        9: {
+            q: 'What was the first individually wrapped penny candy in America?',
+            a: ['Smarties', 'Laffy Taffy', 'Caramel Creams'],
+            c: 'Tootsie Rolls',
+            gif: "<img src='./assest/images/candy.gif'>"
+        },
     };
 
     display();
@@ -128,6 +128,9 @@ $(document).ready(function () {
         time = 5;
         timer();
         $(tempDiv).remove();
+        if (round == propOwn.length){
+            endGame();
+        }
     }
     function gamePlay() {
         for (i = 0; i < questions[round].a.length; i++) {
@@ -171,21 +174,7 @@ $(document).ready(function () {
         $("#wins").html("Wins:<br>" + wins);
         $("#loses").html("Losses:<br>" + loses);   
     }
-    $("#start").on('click', function () {
-        newGame = false;
-        $("#new-game").show();
-        $("#start").hide();
-        newRound();
-    });
-
-    $("#answers").on('click', function () {
-        if (!betweenRounds) {
-            userChoice = event.target.id;
-            compare();
-            endRound();
-        }
-    });
-    $("#new-game").on('click', function(){
+    function endGame(){
         newGame = true;
         shuffle(questions, propOwn.length);
         $("#new-game").hide();
@@ -201,5 +190,21 @@ $(document).ready(function () {
         $("#answers").empty();
         $("#timer").empty(); 
         $("#image").empty();
+    }
+    $("#start").on('click', function () {
+        newGame = false;
+        $("#new-game").show();
+        $("#start").hide();
+        newRound();
+    });
+    $("#answers").on('click', function () {
+        if (!betweenRounds) {
+            userChoice = event.target.id;
+            compare();
+            endRound();
+        }
+    });
+    $("#new-game").on('click', function(){ 
+        endGame();
     });
 });
