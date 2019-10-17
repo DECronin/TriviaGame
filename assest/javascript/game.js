@@ -17,7 +17,7 @@ $(document).ready(function () {
             q: 'What mythical creature with a rack and feathers is often described synonymously with the Wendigo?',
             a: ['Chupacabra', 'Gryffin', 'Harpie'],
             c: 'Ravenstag',
-            gif: "./assest/images/ravenstag.gif"
+            gif: "<img src='./assest/images/ravenstag.gif'>"
         },
         1: {
             q: 'What title did the Halloween Classic: Hocus Pocus almost go by?',
@@ -49,30 +49,30 @@ $(document).ready(function () {
             c: 'Stingy Jack',
             gif: "<img src='./assest/images/spoopy-pumpkin.gif'>"
         },
-        6:{
-            q: '',
-            a: [],
-            c: '',
-            gif: "<img src='./assest/images/_.gif'>"
-        },
-        7:{
-            q: '',
-            a: [],
-            c: '',
-            gif: "<img src='./assest/images/_.gif'>"
-        },
-        8:{
-            q: '',
-            a: [],
-            c: '',
-            gif: "<img src='./assest/images/_.gif'>"
-        },
-        9: {
-            q: '',
-            a: [],
-            c: '',
-            gif: "<img src='./assest/images/_.gif'>"
-        },
+        // 6:{
+        //     q: '',
+        //     a: [],
+        //     c: '',
+        //     gif: "<img src='./assest/images/_.gif'>"
+        // },
+        // 7:{
+        //     q: '',
+        //     a: [],
+        //     c: '',
+        //     gif: "<img src='./assest/images/_.gif'>"
+        // },
+        // 8:{
+        //     q: '',
+        //     a: [],
+        //     c: '',
+        //     gif: "<img src='./assest/images/_.gif'>"
+        // },
+        // 9: {
+        //     q: '',
+        //     a: [],
+        //     c: '',
+        //     gif: "<img src='./assest/images/_.gif'>"
+        // },
     };
 
     display();
@@ -183,7 +183,6 @@ $(document).ready(function () {
             userChoice = event.target.id;
             compare();
             endRound();
-            // $("#image").src(questions[round].gif);
         }
     });
     $("#new-game").on('click', function(){
@@ -201,5 +200,6 @@ $(document).ready(function () {
         $("#round").empty();
         $("#answers").empty();
         $("#timer").empty(); 
+        $("#image").empty();
     });
 });
