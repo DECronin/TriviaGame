@@ -36,6 +36,7 @@ header{
 }
 .scores{
     width: 250px;
+    text-align: center;
     overflow: auto;
     position: absolute;
     right: 5%;
