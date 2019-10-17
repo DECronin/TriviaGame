@@ -1,7 +1,64 @@
-body{
+html{
     width: 100vw;
     height: 100vh;
     background-image: url(../images/kitty-tile.png);
     background-repeat: repeat;
     background-size: 15%;
+}
+header{
+    height: 55px;
+    color: darkblue;
+  text-shadow: -2px -1px 0 cornsilk, 2px -1px 0 cornsilk, -2px 1px 0 cornsilk, 2px 1px 0 cornsilk;
+    font-weight: bold;
+    font-size: 55px;
+    text-align: center;
+}
+.container{
+    width: 70%;
+    margin: 25px auto;
+    background-color: hsl(54, 77%, 75%, 0.85);
+    height: 70vh;
+    position: relative;
+    font-weight: bold;
+    padding: 30px;
+}
+.start-screen{
+    text-align: center;
+    width: 45px;
+    margin: 25px auto;
+    padding: 25px;
+}
+#start{
+    width: 60px;
+    height: 40px;
+    color: cornsilk;
+    background-color: rgb(143, 77, 15, 0.45);
+}
+.scores{
+    width: 250px;
+    overflow: auto;
+    position: absolute;
+    right: 5%;
+    bottom: 55%;
+}
+#round{
+    font-weight: bolder;
+    font-size: 14px;
+    position: absolute;
+    text-align: center;
+    right: 10px;
+    top: 10px;
+    background-color: blanchedalmond;
+    border-radius: 75%;
+    border: 2px solid rgb(100, 63, 20);
+    overflow: auto;
+    height: 47px;
+    width: 47px;
+    padding: 10px;
+}
+#question, #answers{
+    text-align: center;
+    font-size: 40px;
+    margin: 25px 300px 20px auto;
+    list-style-type: none;
 }

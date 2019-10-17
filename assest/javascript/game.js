@@ -4,7 +4,6 @@ $(document).ready(function () {
     var round = 0;
     var wins = 0;
     var loses = 0;
-    var countdownRunning;
     var betweenRounds = true;
     var optionsLayout = false;
     var intervalId;
@@ -49,12 +48,12 @@ $(document).ready(function () {
     shuffle(questions, propOwn.length);
 
     function timer() {
-        if (time > 0 && countdownRunning) {
+        if (time > 0) {
             display();
             time--;
             intervalId = setTimeout(timer, 1000);
         } else {
-            loses++;
+            // loses++;
         }
     }
 
@@ -66,9 +65,10 @@ $(document).ready(function () {
     }
 
     function newRound() {
-            optionsLayout = true;
+        if (!optionsLayout){
             $("#image").empty();
             $("#answers").empty();
+        }
         optionsLayout = true;
         $("#image").empty();
         $("#answers").empty();
@@ -86,12 +86,10 @@ $(document).ready(function () {
     function endRound() {
         round++;
         betweenRounds = true;
-        countdownRunning = false;
+        time = 15;
+        timer();
         setTimeout(newRound, 15000);
         clearInterval(intervalId);
-        if (round > 0) {
-            $("#timer").html("<p> Round Over <br> Next Question in 15 Seconds </p>");
-        }
         $(tempDiv).remove();
     }
 
@@ -121,6 +119,12 @@ $(document).ready(function () {
     function display() {
         if (!betweenRounds) {
             $("#timer").html(time);
+            $("#round").html("Round:<br>" + (1 + round));
+        } else{
+            $("#round").html("Round:");
+            if (round > 0) {
+                $("#timer").html("<p> Round Over <br> Next Question in " + time + " Seconds </p>");
+            }
         }
         if (optionsLayout) {
             $("#question").html(questions[round].q);
@@ -131,9 +135,8 @@ $(document).ready(function () {
             }
             $("#answers").append(tempDiv);
         }
-        $("#wins").html("Wins: " + wins);
-        $("#loses").html("Losses: " + loses);
-        $("#round").html("Round: " + (1 + round));
+        $("#wins").html("Wins:<br>" + wins);
+        $("#loses").html("Losses:<br>" + loses);   
     }
 
     $("#start").on('click', function () {
@@ -151,6 +154,4 @@ $(document).ready(function () {
         }
     });
 });
-
-// change between-screen to timed event instead of start/click
 // new game function instead of refreshing page
