@@ -22,47 +22,47 @@ header{
     font-weight: bold;
     padding: 30px;
 }
-.start-screen{
-    text-align: center;
-    width: 45px;
-    margin: 25px auto auto 15px;
-    padding: 25px;
-}
 #start, #new-game{
+    top: 10vh;
     width: 60px;
     height: 40px;
     color: cornsilk;
     background-color: rgb(143, 77, 15, 0.45);
 }
 #timer{
-    
+    color: crimson;
+    bottom: 10vh;
+    font-size: 20px;
+    font-weight: bold;
 }
-.scores{
-    width: 250px;
+.scores, #timer, .start-screen, #round{
+    width: 150px;
+    right: 3vw;
     text-align: center;
     overflow: auto;
     position: absolute;
-    right: 5%;
-    bottom: 55%;
+    margin: 25px;
+    padding: 10px;
 }
 #round{
+    top: 15vh;
     font-weight: bolder;
     font-size: 14px;
-    position: absolute;
-    text-align: center;
-    right: 10px;
-    top: 10px;
     background-color: blanchedalmond;
     border-radius: 75%;
     border: 2px solid rgb(100, 63, 20);
-    overflow: auto;
     height: 47px;
     width: 47px;
     padding: 10px;
+    right: 6vw;
 }
-#question, #answers{
+.scores{
+    top: 35vh;
+}
+#question, #answers, #image{
+    border: none;
     text-align: center;
     font-size: 40px;
-    margin: 25px 300px 20px auto;
+    margin: 40px 300px 20px auto;
     list-style-type: none;
 }
