@@ -66,3 +66,6 @@ header{
     margin: 40px 300px 20px auto;
     list-style-type: none;
 }
+img{
+    max-height: 230px;
+}
