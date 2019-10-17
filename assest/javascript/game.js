@@ -49,6 +49,30 @@ $(document).ready(function () {
             c: 'Stingy Jack',
             gif: "<img src='./assest/images/spoopy-pumpkin.gif'>"
         },
+        6:{
+            q: '',
+            a: [],
+            c: '',
+            gif: "<img src='./assest/images/_.gif'>"
+        },
+        7:{
+            q: '',
+            a: [],
+            c: '',
+            gif: "<img src='./assest/images/_.gif'>"
+        },
+        8:{
+            q: '',
+            a: [],
+            c: '',
+            gif: "<img src='./assest/images/_.gif'>"
+        },
+        9: {
+            q: '',
+            a: [],
+            c: '',
+            gif: "<img src='./assest/images/_.gif'>"
+        },
     };
 
     display();
