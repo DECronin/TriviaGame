@@ -44,7 +44,7 @@ $(document).ready(function () {
     };
 
     display();
-    var propOwn = Object.getOwnPropertyNames(questions);//creates simple array of obkects first children
+    var propOwn = Object.getOwnPropertyNames(questions);//creates simple array of objects first children
     shuffle(questions, propOwn.length);
 
     function timer() {
@@ -52,8 +52,11 @@ $(document).ready(function () {
             display();
             time--;
             intervalId = setTimeout(timer, 1000);
-        } else {
-            // loses++;
+        }
+        if (time == 0 && betweenRounds){
+            newRound();
+        } else if (time == 0 && !betweenRounds){
+            endRound();
         }
     }
 
@@ -68,14 +71,14 @@ $(document).ready(function () {
         if (!optionsLayout){
             $("#image").empty();
             $("#answers").empty();
+            correct = questions[round].c;
         }
         optionsLayout = true;
         $("#image").empty();
         $("#answers").empty();
         clearInterval(intervalId);
-        setTimeout(endRound, 30000);
         betweenRounds = false;
-        time = 30;
+        time = 15;
         countdownRunning = true;
         do {
             timer();
@@ -84,12 +87,12 @@ $(document).ready(function () {
     }
 
     function endRound() {
+        $("#answers").html(correct);
         round++;
         betweenRounds = true;
-        time = 15;
-        timer();
-        setTimeout(newRound, 15000);
         clearInterval(intervalId);
+        time = 5;
+        timer();
         $(tempDiv).remove();
     }
 
@@ -107,7 +110,6 @@ $(document).ready(function () {
     }
 
     function compare() {
-        correct = questions[round].c;
         if (userChoice == correct) {
             wins++;
         } else {
@@ -134,6 +136,8 @@ $(document).ready(function () {
                 $(tempDiv).append(listWord[i]);
             }
             $("#answers").append(tempDiv);
+        } else {
+
         }
         $("#wins").html("Wins:<br>" + wins);
         $("#loses").html("Losses:<br>" + loses);   
@@ -150,7 +154,6 @@ $(document).ready(function () {
             compare();
             endRound();
             // $("#image").src(questions[round].gif);
-            $("#answers").html(correct);
         }
     });
 });
