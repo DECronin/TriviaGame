@@ -97,7 +97,7 @@ $(document).ready(function () {
     }
     function endRound() {
         $("#answers").html(correct);
-        $("#answers").append(gif);
+        $("#image").append(gif);
         round++;
         betweenRounds = true;
         clearInterval(intervalId);
