@@ -167,6 +167,7 @@ $(document).ready(function () {
             shuffle(listWord, listWord.length);
             $(tempDiv).empty();
             for (i = 0; i < listWord.length; i++) {
+                listWord[i].addClass("a");
                 $(tempDiv).append(listWord[i]);
             }
             $("#answers").append(tempDiv);
