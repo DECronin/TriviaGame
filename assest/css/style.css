@@ -25,14 +25,17 @@ header{
 .start-screen{
     text-align: center;
     width: 45px;
-    margin: 25px auto;
+    margin: 25px auto auto 15px;
     padding: 25px;
 }
-#start{
+#start, #new-game{
     width: 60px;
     height: 40px;
     color: cornsilk;
     background-color: rgb(143, 77, 15, 0.45);
+}
+#timer{
+    
 }
 .scores{
     width: 250px;
