@@ -6,11 +6,12 @@ html{
     background-size: 15%;
 }
 header{
-    height: 55px;
+    height: 70px;
     color: darkblue;
-  text-shadow: -2px -1px 0 cornsilk, 2px -1px 0 cornsilk, -2px 1px 0 cornsilk, 2px 1px 0 cornsilk;
+    text-shadow: -3px -2px 1px hsl(48, 100%, 93%, 0.7), 3px -2px 1px hsl(48, 100%, 93%, 0.7),
+                 -3px 2px 1px hsl(48, 100%, 93%, 0.7), 3px 2px 1px hsl(48, 100%, 93%, 0.7);
     font-weight: bold;
-    font-size: 55px;
+    font-size: 65px;
     text-align: center;
 }
 .container{
@@ -68,4 +69,9 @@ header{
 }
 img{
     max-height: 230px;
+}
+.a:hover, #start:hover, #new-game:hover{
+    color: cornsilk;
+    background-color: hsl(240, 100%, 27%, 0.45);
+    cursor: pointer;
 }
