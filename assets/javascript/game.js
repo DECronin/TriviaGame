@@ -17,61 +17,61 @@ $(document).ready(function () {
             q: 'What mythical creature with a rack and feathers is often described synonymously with the Wendigo?',
             a: ['Chupacabra', 'Gryffin', 'Harpie'],
             c: 'Ravenstag',
-            gif: "<img src='./assest/images/ravenstag.gif'>"
+            gif: "<img src='./assets/images/ravenstag.gif'>"
         },
         1: {
             q: 'What title did the Halloween Classic: Hocus Pocus almost go by?',
             a: ['Skeleton Race', 'Witching Hour', 'Devils Three'],
             c: 'Halloween House',
-            gif: "<img src='./assest/images/pocus-sisters.gif'>"
+            gif: "<img src='./assets/images/pocus-sisters.gif'>"
         },
         2: {
             q: 'In New England, what is the night before Halloween refered to as?',
             a: ['Hallows-Eve', 'Black Thursday', 'Pumpkin Moon'],
             c: 'Cabbage Night',
-            gif: "<img src='./assest/images/cabbages.gif'>"
+            gif: "<img src='./assets/images/cabbages.gif'>"
         },
         3: {
             q: 'What was the original celtic pronunciation of the day Halloween hails from?',
             a: ['Sam + Hain', 'Hal + W`hein', 'Hoal`oh + Eyne'],
             c: 'Saw + When' ,
-            gif: "<img src='./assest/images/witches.gif'>"
+            gif: "<img src='./assets/images/witches.gif'>"
         },
         4: {
             q: 'Which famous magician died on October 31?',
             a: ['David Copperfield', 'Madame DeLinsky', 'Ralf Bialla'],
             c: 'Harry Houdini' ,
-            gif: "<img src='./assest/images/harry.gif'>"
+            gif: "<img src='./assets/images/harry.gif'>"
         },
         5: {
             q: 'Who was the Irish myth inspired by that today we carve Jack`O`Lanterns?',
             a: ['Jack The Ripper', 'Unseelie Jack', 'Jack of the Hunt'],
             c: 'Stingy Jack',
-            gif: "<img src='./assest/images/spoopy-pumpkin.gif'>"
+            gif: "<img src='./assets/images/spoopy-pumpkin.gif'>"
         },
         6:{
             q: 'Which of the following is NOT a term for a scarecrow?',
             a: ['Hodmedod', 'Bwbach', 'Tattie Bogal'],
             c: 'Doodle Sack',
-            gif: "<img src='./assest/images/scarecrow.gif'>"
+            gif: "<img src='./assets/images/scarecrow.gif'>"
         },
         7:{
             q: 'Where does the tradition of Bobbing For Apples originate?',
             a: ['Egypt', 'Southern Asia', 'American West'],
             c: 'Ancient Rome',
-            gif: "<img src='./assest/images/apple-bob.gif'>"
+            gif: "<img src='./assets/images/apple-bob.gif'>"
         },
         8:{
             q: 'If you want to keep spirits out of your home on Halloween, what should you sprinkle on your doorstep?',
             a: ['Sage', 'Cinnamon', 'Garlic'],
             c: 'Salt',
-            gif: "<img src='./assest/images/salt.gif'>"
+            gif: "<img src='./assets/images/salt.gif'>"
         },
         9: {
             q: 'What was the first individually wrapped penny candy in America?',
             a: ['Smarties', 'Laffy Taffy', 'Caramel Creams'],
             c: 'Tootsie Rolls',
-            gif: "<img src='./assest/images/candy.gif'>"
+            gif: "<img src='./assets/images/candy.gif'>"
         },
     };
 
