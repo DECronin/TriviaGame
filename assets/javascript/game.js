@@ -186,7 +186,7 @@ $(document).ready(function () {
         round = 0;
         wins = 0;
         loses = 0;
-        displey();
+        display();
         $("#question").empty();
         $("#round").empty();
         $("#answers").empty();
