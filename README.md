@@ -13,7 +13,7 @@
 * You have 15 seconds to answer each question
   * If time runs out the round will be counted as a loss
 * The correct answer will be displayed for 5 seconds
-* After all the questions have been asked and the last answer has been displayed the game will end and you can chose to start the game the game again should you chose to do so
+* After all the questions have been asked and the last answer has been displayed the game will end and you can start the game again should you chose to do so
 
 #### Requirements:
 * index.html Skeleton
