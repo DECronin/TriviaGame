@@ -90,6 +90,7 @@ $(document).ready(function () {
             if (time == -1 && betweenRounds){
                 newRound();
             } else if (time == -1 && !betweenRounds){
+                loses++;
                 endRound();
             }
         }
@@ -129,7 +130,7 @@ $(document).ready(function () {
         timer();
         $(tempDiv).remove();
         if (round == propOwn.length){
-            endGame();
+            setTimeout(endGame, 5000);
         }
     }
     function gamePlay() {
@@ -155,9 +156,8 @@ $(document).ready(function () {
     function display() {
         if (!betweenRounds) {
             $("#timer").html(time);
-            $("#round").html("Round:<br>" + (1 + round));
+            $("#round").html("Round:<br><br>" + (1 + round));
         } else{
-            $("#round").html("Round:");
             if (round > 0) {
                 $("#timer").html("<p> Round Over <br> Next Question in " + time + " Seconds </p>");
             }
@@ -186,6 +186,7 @@ $(document).ready(function () {
         round = 0;
         wins = 0;
         loses = 0;
+        displey();
         $("#question").empty();
         $("#round").empty();
         $("#answers").empty();
